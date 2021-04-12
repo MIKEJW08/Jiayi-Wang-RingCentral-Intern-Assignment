@@ -1,4 +1,4 @@
-# Foobar
+# About
 
 This repository is dedicated to a Python package created by Jiayi(Mike) Wang and is for the RingCentral Data Analytics & Engineering Summer Internship. 
 
