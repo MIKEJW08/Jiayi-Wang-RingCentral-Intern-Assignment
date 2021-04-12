@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>flask dashboard</title>
+</head>
+
+<script type="text/javascript">
+    function checkForm(form) {
+        var num = document.getElementById("num").value;
+        if (!isNumber(num)) { 
+            alert("Input error, please enter a number between 1 and 100!");
+            return false;
+        } else if (num < 0 && num > 100) { 
+            alert("Please enter a number between 1 and 100!");
+            return false;
+        }
+    }
+    function isNumber(value) {         
+        var patrn = /^(-)?\d+(\.\d+)?$/;
+        return !(patrn.exec(value) == null || value === "");
+    }
+</script>
+<body>
+<form action="{{ url_for('result') }}" method="POST" enctype="multipart/form-data" onsubmit="return checkForm(this)">
+    <p>Nth percentiles of relevant columns:<input type="text" name="number" id="num"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+</body>
+</html>

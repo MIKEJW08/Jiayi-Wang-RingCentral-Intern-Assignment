@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>flask dashboard</title>
+    </head>
+    <body>
+        {% if successful == True %}
+            <li>(1)  Successful  </li>
+            <li>(2)  DF lists:  {{ first_result }}</li>
+            <li>(3)  DF shape and two rows sample data:  </li>
+            <table border="1">
+                  <tr>
+                        {% for key in second_result[0].keys() %}
+                            <td>{{ key }}</td>
+                        {% endfor %}
+                  </tr>
+                {% for index in second_result %}
+                    <tr>
+                        {% for value in index.values() %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+            <li>(4)  Nth percentiles of relevant columns:  {{ third_result }}</li>
+        {% else %}
+            <li>(1)  Unsuccessful  </li>
+        {% endif %}
+    </body>
+</html>
