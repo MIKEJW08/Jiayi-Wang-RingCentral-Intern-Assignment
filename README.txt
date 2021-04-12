@@ -6,15 +6,13 @@ PyPac is a Python package created by Jiayi(Mike) Wang and is for the RingCentral
 
 Install using pip
 ```
-pip install PyPac
+pip install jwringcentral
 ```
 
 ## Usage
 
 ```python
-import PyPac
-
-
+import jwringcentral
 ```
 
 ## Requirements
